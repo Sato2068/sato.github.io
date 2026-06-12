@@ -8,7 +8,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
       --ink:     #0f0f0f;
       --paper:   #f7f5f0;
@@ -18,9 +17,7 @@
       --border:  #dedad4;
       --card:    #ffffff;
     }
-
     html { scroll-behavior: smooth; }
-
     body {
       font-family: 'Noto Sans JP', sans-serif;
       background: var(--paper);
@@ -28,8 +25,6 @@
       font-size: 16px;
       line-height: 1.7;
     }
-
-    /* ── NAV ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
@@ -50,8 +45,6 @@
       transition: color .2s;
     }
     .nav-links a:hover { color: var(--accent); }
-
-    /* ── HERO ── */
     .hero {
       min-height: 100vh;
       display: flex; align-items: center;
@@ -59,7 +52,6 @@
       position: relative; overflow: hidden;
     }
     .hero-inner { max-width: 900px; }
-
     .hero-eyebrow {
       font-family: 'Space Grotesk', sans-serif;
       font-size: 0.78rem; font-weight: 500;
@@ -72,7 +64,6 @@
       content: ''; display: block;
       width: 2rem; height: 2px; background: var(--accent);
     }
-
     .hero-name {
       font-family: 'Space Grotesk', sans-serif;
       font-size: clamp(3rem, 9vw, 7rem);
@@ -81,14 +72,12 @@
       margin-bottom: 1.5rem;
     }
     .hero-name .accent-dot { color: var(--accent2); }
-
     .hero-tagline {
       font-size: clamp(1rem, 2.2vw, 1.25rem);
       color: var(--mid); max-width: 520px;
       margin-bottom: 3rem;
       font-weight: 300;
     }
-
     .hero-cta {
       display: inline-flex; align-items: center; gap: 0.6rem;
       background: var(--ink); color: #fff;
@@ -97,7 +86,6 @@
       transition: background .2s, transform .2s;
     }
     .hero-cta:hover { background: var(--accent); transform: translateY(-2px); }
-
     .hero-scroll {
       position: absolute; bottom: 2.5rem; left: 4vw;
       font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
@@ -107,8 +95,6 @@
       content: ''; display: block;
       width: 1px; height: 3rem; background: var(--border);
     }
-
-    /* ── SECTION COMMON ── */
     section { padding: 6rem 4vw; }
     .section-label {
       font-family: 'Space Grotesk', sans-serif;
@@ -122,8 +108,6 @@
       font-weight: 700; letter-spacing: -0.03em;
       margin-bottom: 3rem;
     }
-
-    /* ── ABOUT ── */
     #about { background: var(--card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
     .about-grid {
       max-width: 1000px; margin: 0 auto;
@@ -131,15 +115,13 @@
     }
     .about-avatar {
       width: 100%; aspect-ratio: 1;
-      border-radius: 1rem; object-fit: cover;
+      border-radius: 1rem;
       background: linear-gradient(135deg, #e0e7ff 0%, #fce4ec 100%);
       display: flex; align-items: center; justify-content: center;
       font-size: 5rem;
     }
     .about-text p { color: var(--mid); margin-bottom: 1rem; }
-    .skills-list {
-      display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem;
-    }
+    .skills-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
     .skill-tag {
       font-size: 0.8rem; font-weight: 500;
       padding: 0.3rem 0.9rem; border-radius: 2rem;
@@ -147,41 +129,46 @@
       font-family: 'Space Grotesk', sans-serif;
     }
 
-    /* ── WORKS ── */
-    #works { max-width: 1100px; margin: 0 auto; padding: 6rem 4vw; }
-    .works-grid {
+    /* ── IZAKAYA ── */
+    #izakaya { background: var(--paper); }
+    .izakaya-grid {
+      max-width: 1100px; margin: 0 auto;
       display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem;
     }
-    .work-card {
+    .izakaya-card {
       background: var(--card); border: 1px solid var(--border);
       border-radius: 1rem; overflow: hidden;
       transition: transform .25s, box-shadow .25s;
     }
-    .work-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
-    .work-thumb {
+    .izakaya-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+    .izakaya-thumb {
       width: 100%; aspect-ratio: 16/9;
       display: flex; align-items: center; justify-content: center;
-      font-size: 2.5rem; letter-spacing: -0.02em;
+      font-size: 2.8rem;
     }
-    .work-thumb.c1 { background: #e8f0fe; }
-    .work-thumb.c2 { background: #fce8e6; }
-    .work-thumb.c3 { background: #e6f4ea; }
-    .work-body { padding: 1.4rem; }
-    .work-tag {
+    .izakaya-thumb.t1 { background: #fff3e0; }
+    .izakaya-thumb.t2 { background: #fce4ec; }
+    .izakaya-thumb.t3 { background: #e8f5e9; }
+    .izakaya-thumb.t4 { background: #e3f2fd; }
+    .izakaya-thumb.t5 { background: #f3e5f5; }
+    .izakaya-body { padding: 1.4rem; }
+    .izakaya-area {
       font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em;
       text-transform: uppercase; color: var(--accent);
       margin-bottom: 0.4rem;
     }
-    .work-title { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 1.05rem; margin-bottom: 0.5rem; }
-    .work-desc { font-size: 0.85rem; color: var(--mid); }
-    .work-link {
-      display: inline-block; margin-top: 1rem;
-      font-size: 0.8rem; font-weight: 600; color: var(--accent);
-      text-decoration: none; letter-spacing: 0.02em;
+    .izakaya-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600; font-size: 1.05rem; margin-bottom: 0.5rem;
     }
-    .work-link:hover { text-decoration: underline; }
+    .izakaya-desc { font-size: 0.85rem; color: var(--mid); line-height: 1.6; }
+    .izakaya-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.9rem; }
+    .izakaya-tag {
+      font-size: 0.72rem; padding: 0.2rem 0.7rem;
+      border-radius: 2rem; border: 1px solid var(--border);
+      color: var(--mid);
+    }
 
-    /* ── CONTACT ── */
     #contact {
       background: var(--ink); color: #fff;
       text-align: center; padding: 7rem 4vw;
@@ -198,54 +185,42 @@
     .contact-btn:hover { opacity: 0.85; transform: translateY(-2px); }
     .contact-btn.primary { background: var(--accent); color: #fff; }
     .contact-btn.secondary { border: 1.5px solid rgba(255,255,255,0.25); color: #fff; }
-
-    /* ── FOOTER ── */
     footer {
       padding: 1.5rem 4vw; text-align: center;
       font-size: 0.78rem; color: var(--mid);
       border-top: 1px solid var(--border);
     }
-
-    /* ── RESPONSIVE ── */
     @media (max-width: 680px) {
       .about-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
     }
-
-    /* ── FADE IN ── */
     .fade-in { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
     .fade-in.visible { opacity: 1; transform: none; }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
-  <a class="nav-logo" href="#">YourName<span style="color:var(--accent2)">.</span></a>
+  <a class="nav-logo" href="#">長江一毅<span style="color:var(--accent2)">.</span></a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
-    <li><a href="#works">Works</a></li>
+    <li><a href="#izakaya">居酒屋</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
     <p class="hero-eyebrow fade-in">Frontend Developer &amp; Designer</p>
     <h1 class="hero-name fade-in">
       長江<br>一毅<span class="accent-dot">.</span>
     </h1>
-    <p class="hero-tagline fade-in">
-      <br>
-      ようこそ
-    </p>
-    <a class="hero-cta fade-in" href="#works">作品を見る →</a>
+    <p class="hero-tagline fade-in">ようこそ</p>
+    <a class="hero-cta fade-in" href="#izakaya">おすすめ居酒屋を見る →</a>
   </div>
   <div class="hero-scroll">Scroll</div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
   <div class="about-grid">
     <div class="about-avatar fade-in">👤</div>
@@ -266,48 +241,84 @@
   </div>
 </section>
 
-<!-- WORKS -->
-<section id="works" style="padding:6rem 4vw;">
-  <div style="max-width:1100px;margin:0 auto;">
-    <p class="section-label fade-in">Works</p>
-    <h2 class="section-title fade-in">制作実績</h2>
-    <div class="works-grid">
+<section id="izakaya">
+  <p class="section-label fade-in">My Picks</p>
+  <h2 class="section-title fade-in" style="max-width:1100px;margin-left:auto;margin-right:auto;">関東おすすめ居酒屋</h2>
+  <div class="izakaya-grid">
 
-      <div class="work-card fade-in">
-        <div class="work-thumb c1">🛍️</div>
-        <div class="work-body">
-          <p class="work-tag">Web App</p>
-          <h3 class="work-title">ECサイト リニューアル</h3>
-          <p class="work-desc">React + TypeScriptで構築したショッピングサイト。レスポンシブ対応・パフォーマンス最適化済み。</p>
-          <a class="work-link" href="#">View Project →</a>
+    <div class="izakaya-card fade-in">
+      <div class="izakaya-thumb t1">🍶</div>
+      <div class="izakaya-body">
+        <p class="izakaya-area">渋谷・東京</p>
+        <h3 class="izakaya-name">炉端焼き 炎</h3>
+        <p class="izakaya-desc">北海道直送の海鮮と地酒が自慢の炉端焼き専門店。店内の囲炉裏を囲んでわいわい楽しめる雰囲気が魅力。</p>
+        <div class="izakaya-tags">
+          <span class="izakaya-tag">海鮮</span>
+          <span class="izakaya-tag">炉端焼き</span>
+          <span class="izakaya-tag">地酒</span>
         </div>
       </div>
-
-      <div class="work-card fade-in">
-        <div class="work-thumb c2">📊</div>
-        <div class="work-body">
-          <p class="work-tag">Dashboard</p>
-          <h3 class="work-title">データ可視化ダッシュボード</h3>
-          <p class="work-desc">D3.jsを用いた売上データのリアルタイム可視化ツール。チームの意思決定を支援。</p>
-          <a class="work-link" href="#">View Project →</a>
-        </div>
-      </div>
-
-      <div class="work-card fade-in">
-        <div class="work-thumb c3">🌿</div>
-        <div class="work-body">
-          <p class="work-tag">Landing Page</p>
-          <h3 class="work-title">ブランドサイト制作</h3>
-          <p class="work-desc">オーガニックブランドのランディングページ。アニメーションとコピーライティングも担当。</p>
-          <a class="work-link" href="#">View Project →</a>
-        </div>
-      </div>
-
     </div>
+
+    <div class="izakaya-card fade-in">
+      <div class="izakaya-thumb t2">🍢</div>
+      <div class="izakaya-body">
+        <p class="izakaya-area">新宿・東京</p>
+        <h3 class="izakaya-name">串焼き もつ吉</h3>
+        <p class="izakaya-desc">昔ながらの雰囲気が残る路地裏の名店。もつ煮込みと焼き鳥が絶品で、仕事帰りのサラリーマンに愛される老舗。</p>
+        <div class="izakaya-tags">
+          <span class="izakaya-tag">焼き鳥</span>
+          <span class="izakaya-tag">もつ煮</span>
+          <span class="izakaya-tag">昭和レトロ</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="izakaya-card fade-in">
+      <div class="izakaya-thumb t3">🥗</div>
+      <div class="izakaya-body">
+        <p class="izakaya-area">横浜・神奈川</p>
+        <h3 class="izakaya-name">野菜巻き串 はる</h3>
+        <p class="izakaya-desc">九州発祥の野菜巻き串が楽しめるお店。ヘルシーながらボリュームも満点で、女性グループにも人気の一軒。</p>
+        <div class="izakaya-tags">
+          <span class="izakaya-tag">野菜巻き串</span>
+          <span class="izakaya-tag">ヘルシー</span>
+          <span class="izakaya-tag">横浜</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="izakaya-card fade-in">
+      <div class="izakaya-thumb t4">🍺</div>
+      <div class="izakaya-body">
+        <p class="izakaya-area">池袋・東京</p>
+        <h3 class="izakaya-name">クラフトビール酒場 跳</h3>
+        <p class="izakaya-desc">国内外20種以上のクラフトビールが常時揃う酒場。ビールに合うおつまみも充実していてビール好きには堪らない。</p>
+        <div class="izakaya-tags">
+          <span class="izakaya-tag">クラフトビール</span>
+          <span class="izakaya-tag">おつまみ</span>
+          <span class="izakaya-tag">池袋</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="izakaya-card fade-in">
+      <div class="izakaya-thumb t5">🦑</div>
+      <div class="izakaya-body">
+        <p class="izakaya-area">川崎・神奈川</p>
+        <h3 class="izakaya-name">漁師の台所 磯風</h3>
+        <p class="izakaya-desc">朝採れの新鮮な魚介を豪快に調理。お刺身の盛り合わせや海鮮鍋が人気で、神奈川の海の幸をたっぷり楽しめる。</p>
+        <div class="izakaya-tags">
+          <span class="izakaya-tag">海鮮</span>
+          <span class="izakaya-tag">刺身</span>
+          <span class="izakaya-tag">川崎</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <p class="section-label fade-in">Contact</p>
   <h2 class="section-title fade-in">お気軽にどうぞ</h2>
@@ -320,13 +331,12 @@
 </section>
 
 <footer>
-  <p>© 2026 YourName. Built with HTML, CSS &amp; JavaScript.</p>
+  <p>© 2026 長江一毅. Built with HTML, CSS &amp; JavaScript.</p>
 </footer>
 
 <script>
-  // Fade-in on scroll
   const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.12 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
